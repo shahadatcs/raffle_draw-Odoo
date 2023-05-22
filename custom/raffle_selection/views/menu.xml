@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    create menu and submenu -->
+    <menuitem id="menu_admission_root" name="Admission" web_icon="raffle_selection,static/description/icon.png"
+              sequence="0"/>
+    <menuitem id="online_apply_master" name="Online Apply" parent="menu_admission_root" sequence="1"/>
+
+    <menuitem id="menu_student_apply" name="Student Details" action="action_apply_student"
+              parent="online_apply_master" sequence="0"/>
+
+    <menuitem id="menu_raffle_student" name="Raffle Student" action="action_raffle_student"
+              parent="menu_admission_root" sequence="2"/>
+
+    <menuitem id="menu_select_student" name="Lucky Student" action="action_lucky_student"
+              parent="menu_admission_root" sequence="3"/>
+
+</odoo>

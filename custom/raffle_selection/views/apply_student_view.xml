@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    it's tree view -->
+    <record id="action_apply_student_tree" model="ir.ui.view">
+        <field name="name">apply.student.tree</field>
+        <field name="model">apply.student</field>
+        <field name="arch" type="xml">
+            <tree export_xlsx="0">
+                <field name="student_first_name"/>
+                <field name="student_last_name"/>
+                <field name="student_birth_date"/>
+                <field name="student_age"/>
+                <field name="student_place_of_birth"/>
+                <field name="student_gender"/>
+                <field name="student_nationality"/>
+                <field name="student_religion"/>
+                <field name="student_birth_certificate_no"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it's form view-->
+    <record id="action_apply_student_form" model="ir.ui.view">
+        <field name="name">apply.student.form</field>
+        <field name="model">apply.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook>
+                        <page name="student_personal_information" string="Student Personal information">
+                            <group>
+                                <field name="student_first_name"/>
+                                <field name="student_last_name"/>
+                                <field name="student_birth_date"/>
+                                <field name="student_age"/>
+                                <field name="student_place_of_birth"/>
+                                <field name="student_gender"/>
+                                <field name="student_nationality"/>
+                                <field name="student_religion"/>
+                                <field name="student_birth_certificate_no"/>
+                            </group>
+                        </page>
+                        <page name="father_information" string="Father Information">
+                            <group>
+                                <field name="father_full_name"/>
+                                <field name="father_nationality"/>
+                                <field name="father_id_no"/>
+                                <field name="father_religion"/>
+                                <field name="father_academic"/>
+                                <field name="father_mob_no"/>
+                                <field name="father_email"/>
+                                <field name="father_home_address"/>
+                                <field name="father_job"/>
+                                <field name="father_status"/>
+                            </group>
+                        </page>
+                        <page name="mother_information" string="Mother information">
+                            <group>
+                                <field name="mother_full_name"/>
+                                <field name="mother_nationality"/>
+                                <field name="mother_id_no"/>
+                                <field name="mother_religion"/>
+                                <field name="mother_academic"/>
+                                <field name="mother_mob_no"/>
+                                <field name="mother_email"/>
+                                <field name="mother_home_address"/>
+                                <field name="mother_job"/>
+                                <field name="mother_status"/>
+                            </group>
+                        </page>
+                        <page name="guardian_details" string="Guardian Information">
+                            <group>
+                                <field name="fg_full_name"/>
+                                <field name="fg_relationship"/>
+                                <field name="fg_job"/>
+                                <field name="fg_address"/>
+                                <field name="fg_mob"/>
+                            </group>
+                        </page>
+                        <page name="Enrollment_data" string="Enrollment Data">
+                            <group>
+                                <field name="applicant_date"/>
+                                <field name="registration_date"/>
+                                <field name="grade_level"/>
+                                <field name="registration_id"/>
+                                <field name="id_code"/>
+                            </group>
+                        </page>
+                        <page name="Documents" string="Documents">
+                            <group>
+                                <field name="student_image"/>
+                                <field name="student_birth_certificate"/>
+                                <field name="father_id_copy"/>
+                                <field name="Mother_id_copy"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    &lt;!&ndash;    it's search view &ndash;&gt;-->
+    <!--    <record id="hospital_patient_search_view" model="ir.ui.view">-->
+    <!--        <field name="name">hospital.patient.search</field>-->
+    <!--        <field name="model">hospital.patient</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <search>-->
+    <!--                &lt;!&ndash;patient name label and filter domain&ndash;&gt;-->
+    <!--                <field name="name" string="patient name"-->
+    <!--                       filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"/>-->
+    <!--                <field name="ref" string="reference"/>-->
+    <!--                <field name="age"/>-->
+    <!--                <field name="gender"/>-->
+    <!--                &lt;!&ndash; Or operational filter&ndash;&gt;-->
+    <!--                <filter name="filter_male" string="male" domain="[('gender', '=', 'male')]"/>-->
+    <!--                <filter name="filter_female" string="female" domain="[('gender', '=', 'female')]"/>-->
+    <!--                &lt;!&ndash;  Separator use for 'AND' operation filter&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <separator/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                <filter name="filter_kids" string="kids" domain="[('age', '&lt;=', 5)]"/>&ndash;&gt;-->
+    <!--                <separator/>-->
+    <!--                &lt;!&ndash;Hide and UnHide filter process with Archive System &ndash;&gt;-->
+    <!--                <filter name="filter_archive" string="Archived" domain="[('active', '=', False)]"/>-->
+    <!--                &lt;!&ndash;group by filter &ndash;&gt;-->
+    <!--                <group expand="0" string="Group By">-->
+    <!--                    <filter name="group_by_gender" string="Gender" domain="[]" context="{'group_by':'gender'}"/>-->
+    <!--                </group>-->
+    <!--                <searchpanel>-->
+    <!--                    <field name="gender" icon="fa-users" select="multi" enable_counters="1"/>-->
+    <!--                </searchpanel>-->
+    <!--            </search>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <!--  how to action setting -->
+    <record id="action_apply_student" model="ir.actions.act_window">
+        <field name="name">Applied Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apply.student</field>
+        <field name="view_mode">tree,form</field>
+        <!--it's dictionary which set default search value -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face" style="color:red">
+                Create a Student !
+            </p>
+        </field>
+    </record>
+
+</odoo>
