@@ -6,6 +6,6 @@ class RaffleStudent(models.Model):
     _description = 'Raffle Student'
 
     name = fields.Char(string='Name')
-    winner_ids = fields.Many2many('apply.student', string='Winners')
+    winner_ids = fields.Many2one('raffle.draw', string='Winners')
 
 

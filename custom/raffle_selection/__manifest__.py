@@ -9,9 +9,11 @@
     'data': [
         'security/ir.model.access.csv',
 
+        # 'report/report.xml',
+        # 'report/winner_student_details.xml',
 
         'views/apply_student_view.xml',
-        'views/raffle_student_view.xml',
+        'views/winner_student_view.xml',
         'views/raffle_draw_view.xml',
         'views/menu.xml'
 

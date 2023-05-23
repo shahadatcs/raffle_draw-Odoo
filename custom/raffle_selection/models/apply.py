@@ -123,7 +123,3 @@ class ApplyStudent(models.Model):
     #     random_numbers = numbers[:count]  # Select the first 20 shuffled numbers
     #
     #     print(random_numbers)
-
-
-
-

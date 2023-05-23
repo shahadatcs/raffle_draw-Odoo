@@ -11,7 +11,7 @@
     <menuitem id="menu_raffle_student" name="Raffle Student" action="action_raffle_student"
               parent="menu_admission_root" sequence="2"/>
 
-    <menuitem id="menu_select_student" name="Lucky Student" action="action_lucky_student"
+    <menuitem id="menu_select_student" name="Reporting" action="action_lucky_student"
               parent="menu_admission_root" sequence="3"/>
 
 </odoo>

@@ -26,6 +26,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="student_image" widget="image"  class="oe_right" options='{"size": [80, 100]}'/>
                     <notebook>
                         <page name="student_personal_information" string="Student Personal information">
                             <group>
@@ -40,6 +41,8 @@
                                 <field name="student_birth_certificate_no"/>
                             </group>
                         </page>
+                </notebook>
+                <notebook>
                         <page name="father_information" string="Father Information">
                             <group>
                                 <field name="father_full_name"/>
@@ -54,6 +57,8 @@
                                 <field name="father_status"/>
                             </group>
                         </page>
+                </notebook>
+                <notebook>
                         <page name="mother_information" string="Mother information">
                             <group>
                                 <field name="mother_full_name"/>
@@ -68,6 +73,8 @@
                                 <field name="mother_status"/>
                             </group>
                         </page>
+                </notebook>
+                <notebook>
                         <page name="guardian_details" string="Guardian Information">
                             <group>
                                 <field name="fg_full_name"/>
@@ -86,15 +93,18 @@
                                 <field name="id_code"/>
                             </group>
                         </page>
+                </notebook>
+                <notebook>
                         <page name="Documents" string="Documents">
                             <group>
-                                <field name="student_image"/>
+<!--                                <field name="student_image"/>-->
                                 <field name="student_birth_certificate"/>
                                 <field name="father_id_copy"/>
                                 <field name="Mother_id_copy"/>
                             </group>
                         </page>
-                    </notebook>
+                </notebook>
+<!--                    </notebook>-->
                 </sheet>
             </form>
         </field>
