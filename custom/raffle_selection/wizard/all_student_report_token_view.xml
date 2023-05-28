@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- it's form view-->
+    <record id="action_report_token_form" model="ir.ui.view">
+        <field name="name">token.report.wizard.form</field>
+        <field name="model">token.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                    <group>
+                        <field name="raffle_id" string="Raffle Id"/>
+                    </group>
+                <footer>
+                    <button name="action_print_token_reports" type="object" string="Print" class="btn-primary"
+                            data-hotkey="P"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="c"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--  how to action setting -->
+    <record id="action_report_token" model="ir.actions.act_window">
+        <field name="name">Token Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">token.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="action_report_token_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- action with submenu -->
+
+</odoo>

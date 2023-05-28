@@ -2,17 +2,13 @@ from odoo import api, fields, models, _
 from datetime import date
 from odoo.exceptions import ValidationError
 from dateutil import relativedelta
-import random
 
 
-# create a database table
 class ApplyStudent(models.Model):
     _name = "apply.student"
     _description = "Apply Student"
     _rec_name = "registration_id"
 
-    # student_count = fields.Integer(string='Student Count', compute='_compute_student_count')
-    # lucky_student_id = fields.Integer(string='Select Student', compute='student_choice')
     # father info
     father_full_name = fields.Char(string="Full Name")
     father_nationality = fields.Selection([("bangladeshi", "Bangladeshi"), ("arabic", "Arabian")],
@@ -69,7 +65,7 @@ class ApplyStudent(models.Model):
     registration_date = fields.Date(string="Registration Date")
     grade_level = fields.Char(string="Grade Level")
     registration_id = fields.Char(string="Registration No")
-    id_code = fields.Many2many('raffle.student', string="Identification Code")
+    id_code = fields.Char(string="Identification Code")
 
     # Documents
     student_image = fields.Image(string="Student's Image")
@@ -94,32 +90,3 @@ class ApplyStudent(models.Model):
         for rec in self:
             rec.student_birth_date = today - relativedelta.relativedelta(years=rec.student_age)
         return
-
-    # def _compute_student_count(self):
-    #     lis = []
-    #     for rec in self:
-    #         student_count = self.env['apply.student'].search_count([''])
-    #         rec.student_count = student_count
-    #     print(student_count)
-
-    # @api.depends('student_count')
-    # def student_choice(self):
-    #     li = []
-    #     for rec in self:
-    #
-    #     print(random.choice())
-
-    # def raffle_student(self):
-    #
-    #     record = self.env['apply.student'].search([])
-    #     numbers = []
-    #     for rec in record:
-    #         numbers.append(rec.id)
-    #
-    #     n = self.student_count  # Assuming you want unique random numbers from 0 to 30
-    #     count = 20  # Number of random numbers to generate
-    #     random.shuffle(numbers)  # Shuffle the list
-    #
-    #     random_numbers = numbers[:count]  # Select the first 20 shuffled numbers
-    #
-    #     print(random_numbers)

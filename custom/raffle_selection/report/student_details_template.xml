@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_student_details">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <div class="col-md-6" id="products_grid">
+                        <table width="100%">
+                            <t t-set="count" t-value="0"/>
+                            <t t-foreach="student_info" t-as="info">
+                                <td>
+                                    <div style="width:100%; height:auto; display:flex;" class="card">
+                                        <div>
+                                            <span class="float-left">
+                                                <p>
+                                                    <strong>Applicant Name:</strong>
+                                                    <t t-esc="info['name']"/>
+                                                </p>
+                                                <p>
+                                                    <strong>Registration ID:</strong>
+                                                    <t t-esc="info['reg_id']"/>
+                                                </p>
+                                                <p>
+                                                    <strong>Father's Name:</strong>
+                                                    <t t-esc="info['father_name']"/>
+                                                </p>
+                                            </span>
+                                            <span class="float-right">
+                                                <p>
+                                                    <img t-if="info['image']" t-att-src="'data:image/png;base64,' + info['image']"
+                                                        height="50" border="1" width="100"/>
+                                                </p>
+                                                <p>
+                                                    <img t-att-src="'/report/barcode/Code128/' + str(info['barcode'])"
+                                                        style="width:120px; height:30px" alt="Barcode"/>
+                                                </p>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <t t-set="count" t-value="count + 1"/>
+                                <t t-if="count % 2 == 0">
+                                <tr></tr>
+                                </t>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

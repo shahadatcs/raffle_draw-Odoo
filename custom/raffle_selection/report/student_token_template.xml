@@ -1,0 +1,27 @@
+<odoo>
+    <template id="report_student_token">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <div class="col-md-6" id="products_grid">
+                        <table width="100%">
+                            <t t-set="count" t-value="0"/>
+                            <t t-foreach="student_info" t-as="info">
+                                <t t-if="count % 5 == 0">
+                                    <tr></tr>
+                                </t>
+                                <td>
+                                    <h6 style="text-align:center">Reg No</h6>
+                                    <img t-att-src="'/report/barcode/Code128/' + str(info['barcode'])"
+                                         style="width:120px; height:30px" alt="Barcode"/>
+                                    <p> </p>
+                                </td>
+                                <t t-set="count" t-value="count + 1"/>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

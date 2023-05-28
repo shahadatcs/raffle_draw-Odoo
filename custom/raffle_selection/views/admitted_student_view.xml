@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    it's tree view -->
+    <record id="admit_student_tree" model="ir.ui.view">
+        <field name="name">admit.student.tree</field>
+        <field name="model">admit.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="reg_No"/>
+                <field name="image" widget="image" options='{"size": [30, 30]}'/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- it's form view-->
+    <record id="admit_student_form" model="ir.ui.view">
+        <field name="name">admit.student.form</field>
+        <field name="model">admit.student</field>
+        <field name="arch" type="xml">
+            <form string="Admit Student">
+                <sheet>
+                    <group>
+                        <field name="barcode"/>
+                        <field name="name" readonly="1"/>
+                        <field name="image" widget="image" options='{"size": [50, 50]}'/>
+                        <field name="reg_No" readonly="1"/>
+                        <field name="admission_confirmed" invisible="1"/>
+                    </group>
+                    <group>
+                        <button name="action_search_by_barcode" string="Search" type="object" class="oe_highlight"/>
+                        <button name="action_confirm_admission" string="Confirm Admission" type="object" class="oe_highlight"
+                                attrs="{'invisible': [('admission_confirmed', '=', True)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    how to action setting
+    <record id="action_admit_student" model="ir.actions.act_window">
+        <field name="name">Admitted Student</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">admit.student</field>
+        <field name="view_mode">tree,form</field>
+        <!--it's dictionary which set default search value -->
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face" style="color:red">
+                Create an Admitted!
+            </p>
+        </field>
+    </record>
+
+</odoo>

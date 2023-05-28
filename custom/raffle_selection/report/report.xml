@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_student_details_record" model="ir.actions.report">
+        <field name="name">Student Details</field>
+        <field name="model">student.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">raffle_selection.report_student_details</field>
+        <field name="report_file">raffle_selection.report_student_details</field>
+        <field name="binding_model_id" ref="model_student_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+        <record id="report_student_token_record" model="ir.actions.report">
+        <field name="name">Student Token</field>
+        <field name="model">token.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">raffle_selection.report_student_token</field>
+        <field name="report_file">raffle_selection.report_student_token</field>
+        <field name="binding_model_id" ref="model_student_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

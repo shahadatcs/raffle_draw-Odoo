@@ -9,11 +9,16 @@
     'data': [
         'security/ir.model.access.csv',
 
-        # 'report/report.xml',
-        # 'report/winner_student_details.xml',
 
+        'report/student_details_template.xml',
+        'report/student_token_template.xml',
+        'report/report.xml',
+
+        'wizard/all_student_report_view.xml',
+        'wizard/all_student_report_token_view.xml',
+
+        'views/admitted_student_view.xml',
         'views/apply_student_view.xml',
-        'views/winner_student_view.xml',
         'views/raffle_draw_view.xml',
         'views/menu.xml'
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- it's form view-->
+    <record id="action_report_student_form" model="ir.ui.view">
+        <field name="name">student.patient.report.form</field>
+        <field name="model">student.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                    <group>
+                        <field name="raffle_id" string="Raffle Id"/>
+                    </group>
+                <footer>
+                    <button name="action_print_reports" type="object" string="Print" class="btn-primary"
+                            data-hotkey="P"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="c"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--  how to action setting -->
+    <record id="action_report_student" model="ir.actions.act_window">
+        <field name="name">Student Report Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="action_report_student_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- action with submenu -->
+
+</odoo>

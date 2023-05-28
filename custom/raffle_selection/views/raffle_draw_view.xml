@@ -39,30 +39,6 @@
                                     <field name="student_id"/>
                                     <field name="image"/>
                                     <field name="name"/>
-                                    <!--                                    <templates>-->
-                                    <!--                                        <t t-name="kanban-box">-->
-                                    <!--                                            <div class="p-3" style="width:50px;">-->
-                                    <!--                                                <center>-->
-                                    <!--                                                <div class="oe_kanban_details">-->
-                                    <!--                                                    <div>-->
-                                    <!--                                                    <strong class=""><h6>Registration NO: <field name="student_id"/></h6></strong>-->
-                                    <!--                                                    <strong class="o_kanban_record_title">Name: <field name="name"/></strong>-->
-                                    <!--                                                    </div>-->
-                                    <!--                                                    <strong class=""><field name="img" widget="image" class="oe_right" options='{"size": [60, 40]}'/></strong>-->
-
-                                    <!--&lt;!&ndash;                                                    <div class="o_kanban_tags_section"/>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;                                                    <ul>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;                                                        <li>ID: <field name="student_id"/> </li>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;                                                        <li>Name: <field name="name"/></li>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;                                                    </ul>&ndash;&gt;-->
-
-
-                                    <!--                                                </div>-->
-                                    <!--                                                </center>-->
-                                    <!--                                            </div>-->
-                                    <!--                                        </t>-->
-                                    <!--                                    </templates>-->
-
                                     <templates>
                                         <t t-name="kanban-box">
                                             <div class="oe_kanban_card oe_kanban_global_click">

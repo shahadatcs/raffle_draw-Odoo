@@ -1,5 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access.apply.student,access_apply_student,raffle_selection.model_apply_student,base.group_user,1,1,1,1
-access.raffle.student,access_raffle_student,raffle_selection.model_raffle_student,base.group_user,1,1,1,1
-access.raffle.draw,access_raffle_draw,raffle_selection.model_raffle_draw,base.group_user,1,1,1,1
-access.winner.student,access_winner_student,raffle_selection.model_winner_student,base.group_user,1,1,1,1
+access.apply.student,access_apply_student,raffle_selection.model_apply_student,,1,1,1,1
+access.raffle.draw,access_raffle_draw,raffle_selection.model_raffle_draw,,1,1,1,1
+access.winner.student,access_winner_student,raffle_selection.model_winner_student,,1,1,1,1
+access.student.report.wizard,access_student_report_wizard,raffle_selection.model_student_report_wizard,,1,1,1,1
+access.admit.student,access_admit_student,raffle_selection.model_admit_student,,1,1,1,1
+access.token.report.wizard,access_token_report_wizard,raffle_selection.model_token_report_wizard,,1,1,1,1
+
